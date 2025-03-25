@@ -1,0 +1,56 @@
+graph TD
+    A[Data Collection] -->|Input: Employee Attrition Dataset| B[Data Preprocessing]
+    B --> C[Handling Missing Data]
+    C --> D[Categorical Encoding]
+    D --> E[Feature Scaling]
+    E --> F[Class Imbalance Handling]
+    F --> G{Model Selection}
+    G --> |Traditional Models| H[Random Forest]
+    G --> |Traditional Models| I[XGBoost]
+    G --> |Deep Learning Models| J[LSTM]
+    G --> |Deep Learning Models| K[GRU]
+    G --> |Deep Learning Models| L[Fully Connected Neural Network]
+    H & I & J & K & L --> M[Model Training & Validation]
+    M --> N[Performance Metrics Calculation]
+    N --> O[Model Comparison and Visualization]
+    
+    subgraph Data Preprocessing
+    C
+    D
+    E
+    F
+    end
+    
+    subgraph Traditional Models
+    H
+    I
+    end
+    
+    subgraph Deep Learning Models
+    J
+    K
+    L
+    end
+    
+    subgraph Model Training & Validation
+    M --> P[Train-test split]
+    M --> Q[Cross-validation]
+    M --> R[Training over epochs]
+    end
+    
+    subgraph Performance Metrics
+    N --> S[Accuracy]
+    N --> T[Precision]
+    N --> U[Recall]
+    N --> V[F1-Score]
+    N --> W[Confusion Matrix]
+    end
+    
+    subgraph Visualization
+    O --> X[Accuracy/Loss Curves]
+    O --> Y[Confusion Matrices]
+    O --> Z[SHAP-based Interpretability]
+    end
+
+    %% Adding this line to change background color %%
+    style graph fill:#ffffff
